@@ -10,6 +10,15 @@ if [ -d "$config_path" ]; then
     source $config_path/local_vars.sh
 fi
 
+## Determine cloud account
+#if [[ "$PW_CSP" = "aws" ]]; then
+#    export machine="Amazon"
+#elif [[ "$PW_CSP" = "azure" ]]; then
+#    export machine="Azure"
+#elif [[ "$PW_CSP" = "google" ]]; then
+#    export machine="Google"
+#i
+
 # source the necessary files to setup
 if [ "$#" -eq 2 ]; then
   export regdir=$2
@@ -18,7 +27,7 @@ else
   export regdir=$(pwd)
   . $(awk '{ print $1, $2, $3, $4, $5, $6, $7, $8 }' regression_var.out)
 fi
-
+echo $machine
 export scripts=${scripts_updat:-$scripts}
 . $scripts/regression_param.sh $regtest
 
