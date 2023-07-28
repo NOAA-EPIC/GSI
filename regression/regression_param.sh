@@ -96,8 +96,8 @@ case $regtest in
            topts[1]="0:20:00" ; popts[1]="18/2/" ; ropts[1]="/1"
            topts[2]="0:20:00" ; popts[2]="18/4/" ; ropts[2]="/2"
         elif [[ "$machine" = "Google" ]]; then
-           topts[1]="0:15:00" ; popts[1]="15/2/" ; ropts[1]="/1"
-           topts[2]="0:15:00" ; popts[2]="15/4/" ; ropts[2]="/2"
+           topts[1]="0:25:00" ; popts[1]="15/2/" ; ropts[1]="/1"
+           topts[2]="0:25:00" ; popts[2]="15/4/" ; ropts[2]="/2"
         fi
 
         if [ "$debug" = ".true." ] ; then
@@ -138,8 +138,8 @@ case $regtest in
            topts[1]="0:20:00" ; popts[1]="18/2/" ; ropts[1]="/1"
            topts[2]="0:20:00" ; popts[2]="18/4/" ; ropts[2]="/2"
         elif [[ "$machine" = "Google" ]]; then
-           topts[1]="0:15:00" ; popts[1]="15/2/" ; ropts[1]="/1"
-           topts[2]="0:15:00" ; popts[2]="15/4/" ; ropts[2]="/2"
+           topts[1]="0:25:00" ; popts[1]="15/2/" ; ropts[1]="/1"
+           topts[2]="0:25:00" ; popts[2]="15/4/" ; ropts[2]="/2"
         fi
 
         if [ "$debug" = ".true." ] ; then
@@ -198,8 +198,8 @@ case $regtest in
            topts[1]="0:20:00" ; popts[1]="18/2/" ; ropts[1]="/1"
            topts[2]="0:20:00" ; popts[2]="18/4/" ; ropts[2]="/2"
         elif [[ "$machine" = "Google" ]]; then
-           topts[1]="0:10:00" ; popts[1]="15/6/" ; ropts[1]="/1"
-           topts[2]="0:10:00" ; popts[2]="15/8/" ; ropts[2]="/2"
+           topts[1]="0:30:00" ; popts[1]="15/6/" ; ropts[1]="/1"
+           topts[2]="0:30:00" ; popts[2]="15/8/" ; ropts[2]="/2"
         fi
 
         if [ "$debug" = ".true." ] ; then
@@ -237,8 +237,8 @@ case $regtest in
            topts[1]="0:20:00" ; popts[1]="18/2/" ; ropts[1]="/1"
            topts[2]="0:20:00" ; popts[2]="18/4/" ; ropts[2]="/2"
         elif [[ "$machine" = "Google" ]]; then
-           topts[1]="0:15:00" ; popts[1]="15/1/" ; ropts[1]="/1"
-           topts[2]="0:15:00" ; popts[2]="15/2/" ; ropts[2]="/2"
+           topts[1]="0:25:00" ; popts[1]="15/1/" ; ropts[1]="/1"
+           topts[2]="0:25:00" ; popts[2]="15/2/" ; ropts[2]="/2"
         fi
 
         if [ "$debug" = ".true." ] ; then
@@ -276,8 +276,8 @@ case $regtest in
            topts[1]="0:20:00" ; popts[1]="18/2/" ; ropts[1]="/1"
            topts[2]="0:20:00" ; popts[2]="18/4/" ; ropts[2]="/2"
         elif [[ "$machine" = "Google" ]]; then
-           topts[1]="0:15:00" ; popts[1]="4/4/" ; ropts[1]="/1"
-           topts[2]="0:15:00" ; popts[2]="6/6/" ; ropts[2]="/2"
+           topts[1]="0:25:00" ; popts[1]="4/4/" ; ropts[1]="/1"
+           topts[2]="0:25:00" ; popts[2]="6/6/" ; ropts[2]="/2"
         fi
 
         if [ "$debug" = ".true." ] ; then
