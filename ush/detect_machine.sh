@@ -43,3 +43,6 @@ MACHINE_ID=${MACHINE:-${MACHINE_ID}}
 if [ $MACHINE_ID = hera ] || [ $MACHINE_ID = cheyenne ]; then
     MACHINE_ID=${MACHINE_ID}.${COMPILER}
 fi
+if [ $MACHINE_ID = wcoss2 ]; then
+  module unuse /apps/ops/prod/libs/modulefiles/compiler/intel/19.1.3.304
+fi

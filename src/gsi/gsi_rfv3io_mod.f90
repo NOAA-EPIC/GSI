@@ -2534,6 +2534,13 @@ subroutine gsi_fv3ncdf_readuv(grd_uv,ges_u,ges_v,fv3filenamegin)
         call stop2(333)
       endif
     endif
+    if(kbgn > kend) then
+        call check( nf90_inq_varid(gfile_loc,'u',u_grd_VarId) ) 
+!       call MPI_Wait(MPI_COMM_WORLD)
+        iret=nf90_get_var(gfile_loc,u_grd_VarId,u2d,start=u_startloc,count=u_countloc)
+        call check( nf90_inq_varid(gfile_loc,'v',v_grd_VarId) ) 
+        iret=nf90_get_var(gfile_loc,v_grd_VarId,v2d,start=v_startloc,count=v_countloc)
+    else 
     do ilevtot=kbgn,kend
       vgsiname=grd_uv%names(1,ilevtot)
       call getfv3lamfilevname(vgsiname,fv3filenamegin,filenamein2,varname)
@@ -2570,6 +2577,7 @@ subroutine gsi_fv3ncdf_readuv(grd_uv,ges_u,ges_v,fv3filenamegin)
         enddo
       else
         call check( nf90_inq_varid(gfile_loc,'u',u_grd_VarId) ) 
+!       call MPI_Wait(MPI_COMM_WORLD)
         iret=nf90_get_var(gfile_loc,u_grd_VarId,u2d,start=u_startloc,count=u_countloc)
         call check( nf90_inq_varid(gfile_loc,'v',v_grd_VarId) ) 
         iret=nf90_get_var(gfile_loc,v_grd_VarId,v2d,start=v_startloc,count=v_countloc)
@@ -2600,7 +2608,7 @@ subroutine gsi_fv3ncdf_readuv(grd_uv,ges_u,ges_v,fv3filenamegin)
       call fv3_h_to_ll(uc2d,hwork(1,:,:,ilevtot),nxcase,nycase,nloncase,nlatcase,.true.)
       call fv3_h_to_ll(vc2d,hwork(2,:,:,ilevtot),nxcase,nycase,nloncase,nlatcase,.true.)
     enddo ! i
-
+    endif
     if(fv3_io_layout_y > 1) then
       do nio=0,fv3_io_layout_y-1
         iret=nf90_close(gfile_loc_layout(nio))

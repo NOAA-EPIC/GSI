@@ -25,11 +25,17 @@ set +x
 source $DIR_ROOT/ush/module-setup.sh
 module use $DIR_ROOT/modulefiles
 module load gsi_$MACHINE_ID
+module unload craype-x86-rome
 module list
+module unuse /apps/ops/prod/libs/modulefiles/compiler/intel/19.1.3.304
 set -x
 
+export CC=cc;export CXX=CC;export FC=ftn
+export CMAKE_C_COMPILER=cc;export CMAKE_Fortran_COMPILER=ftn;export CMAKE_CXX_COMPILER=CC
+ftn --version
 # Set CONTROLPATH variable to user develop installation
 CONTROLPATH="$DIR_ROOT/../develop/install/bin"
+
 # Collect BUILD Options
 CMAKE_OPTS+=" -DCMAKE_BUILD_TYPE=$BUILD_TYPE"
 
